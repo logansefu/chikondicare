@@ -1,0 +1,4 @@
+<?php
+require dirname(__DIR__).'/_init.php'; use App\Core\AccessControl;use App\Core\Database;
+AccessControl::require('doctors.manage');$rows=Database::connection()->query("SELECT * FROM doctors ORDER BY name")->fetchAll();require dirname(__DIR__).'/_layout_top.php';?>
+<div class="d-flex justify-content-between mb-3"><h2>Doctors</h2><a class="btn btn-primary" href="/doctors/create.php">Add doctor</a></div><div class="card p-3 table-responsive"><table class="table"><thead><tr><th>Number</th><th>Name</th><th>Phone</th><th>Room</th><th>Type</th><th>Next visit</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><?=e($r['doctor_number'])?></td><td><?=e($r['name'])?></td><td><?=e($r['telephone'])?></td><td><?=e($r['room_number'])?></td><td><?=e($r['employment_type'])?></td><td><?=e($r['next_visit_date']??'—')?></td></tr><?php endforeach;?></tbody></table></div><?php require dirname(__DIR__).'/_layout_bottom.php';?>

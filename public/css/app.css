@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+  --cc-forest: #0F2E28;
+  --cc-forest-light: #164038;
+  --cc-mint: #DCEEE8;
+  --cc-mint-pale: #EEF7F4;
+  --cc-cream: #FBF6E9;
+  --cc-amber: #F5B841;
+  --cc-amber-soft: #FDF0D5;
+  --cc-terracotta: #C85A32;
+  --cc-terracotta-soft: #FAE8E1;
+  --cc-bg: #F6F8F7;
+  --cc-surface: #FFFFFF;
+  --cc-text-main: #122622;
+  --cc-text-muted: #5A6E69;
+  --cc-border: #E1EAE6;
+  --cc-radius-lg: 20px;
+  --cc-radius-md: 14px;
+  --cc-radius-pill: 999px;
+  --cc-shadow-sm: 0 4px 16px rgba(15, 46, 40, 0.04);
+  --cc-shadow-md: 0 10px 30px rgba(15, 46, 40, 0.07);
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cc-bg);
+  color: var(--cc-text-main);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, .cc-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--cc-forest);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle African Chitenje / Geometric Heritage Top Border */
+.cc-african-strip {
+  height: 5px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--cc-forest) 0px, var(--cc-forest) 24px,
+    var(--cc-amber) 24px, var(--cc-amber) 48px,
+    var(--cc-terracotta) 48px, var(--cc-terracotta) 72px,
+    #4E8D7C 72px, #4E8D7C 96px
+  );
+}
+
+/* Header & Navigation */
+.cc-navbar {
+  background-color: var(--cc-surface);
+  border-bottom: 1px solid var(--cc-border);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 2px 12px rgba(15, 46, 40, 0.03);
+}
+
+.cc-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--cc-forest) !important;
+}
+
+.cc-brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--cc-forest);
+  color: var(--cc-amber);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(15, 46, 40, 0.18);
+}
+
+.cc-brand-sub {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cc-terracotta);
+  display: block;
+  line-height: 1;
+}
+
+.cc-nav-pills .nav-link {
+  color: var(--cc-text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--cc-radius-pill);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cc-nav-pills .nav-link:hover {
+  color: var(--cc-forest);
+  background-color: var(--cc-mint-pale);
+}
+
+.cc-nav-pills .nav-link.active {
+  color: var(--cc-forest);
+  background-color: var(--cc-mint);
+  font-weight: 700;
+}
+
+.cc-user-chip {
+  background-color: var(--cc-cream);
+  border: 1px solid #EFE4C8;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--cc-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+}
+
+.cc-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cc-terracotta);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-role-tag {
+  background: var(--cc-forest);
+  color: var(--cc-amber);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--cc-radius-pill);
+  text-transform: uppercase;
+}
+
+/* Careold Dark Forest Hero Banner */
+.cc-hero-banner {
+  background: linear-gradient(135deg, var(--cc-forest) 0%, var(--cc-forest-light) 100%);
+  color: #FFFFFF;
+  border-radius: var(--cc-radius-lg);
+  padding: 2rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--cc-shadow-md);
+}
+
+.cc-hero-banner h1, .cc-hero-banner h2 {
+  color: #FFFFFF;
+}
+
+.cc-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--cc-amber);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--cc-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+/* Careold Pastel Metric Cards */
+.cc-stat-card {
+  border: 0;
+  border-radius: var(--cc-radius-lg);
+  padding: 1.5rem;
+  height: 100%;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.cc-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cc-shadow-md);
+}
+
+.cc-stat-mint { background-color: var(--cc-mint); }
+.cc-stat-cream { background-color: var(--cc-amber-soft); }
+.cc-stat-terra { background-color: var(--cc-terracotta-soft); }
+.cc-stat-sage { background-color: #E4EFE9; }
+
+.cc-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--cc-forest);
+  box-shadow: 0 4px 12px rgba(15, 46, 40, 0.06);
+  margin-bottom: 1rem;
+}
+
+.cc-stat-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cc-forest);
+}
+
+.cc-stat-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cc-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Cards & Service Tiles */
+.card, .cc-card {
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.cc-module-tile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  color: var(--cc-forest);
+  transition: all 0.2s ease;
+}
+
+.cc-module-tile:hover {
+  background: var(--cc-mint-pale);
+  border-color: #B8DDD0;
+  transform: translateY(-2px);
+  color: var(--cc-forest);
+}
+
+.cc-module-tile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--cc-cream);
+  color: var(--cc-terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.cc-module-tile:hover .cc-module-tile-icon {
+  background: var(--cc-forest);
+  color: var(--cc-amber);
+}
+
+/* Pill Buttons & Forms */
+.btn {
+  font-weight: 600;
+  border-radius: var(--cc-radius-pill);
+  padding: 0.55rem 1.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-sm { padding: 0.35rem 0.9rem; font-size: 0.84rem; }
+
+.btn-primary, .btn-cc-forest {
+  background-color: var(--cc-forest);
+  border-color: var(--cc-forest);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover, .btn-cc-forest:hover {
+  background-color: var(--cc-forest-light);
+  border-color: var(--cc-forest-light);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-cc-amber {
+  background-color: var(--cc-amber);
+  border-color: var(--cc-amber);
+  color: var(--cc-forest);
+  font-weight: 700;
+}
+
+.btn-outline-primary {
+  color: var(--cc-forest);
+  border-color: var(--cc-forest);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--cc-forest);
+  color: #FFFFFF;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--cc-forest);
+  margin-bottom: 0.4rem;
+}
+
+.form-control, .form-select {
+  border-radius: 12px;
+  border: 1.5px solid var(--cc-border);
+  padding: 0.65rem 0.95rem;
+  background-color: #FAFDFC;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--cc-forest);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(15, 46, 40, 0.08);
+}
+
+/* Tables & Status Pills */
+.table { margin-bottom: 0; vertical-align: middle; }
+.table thead th {
+  background-color: var(--cc-mint-pale);
+  color: var(--cc-forest);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--cc-border);
+  padding: 0.9rem 1rem;
+}
+
+.table tbody td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid #EEF3F1;
+}
+
+.cc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--cc-radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.cc-badge-booked { background-color: var(--cc-amber-soft); color: #8A5A00; }
+.cc-badge-checked_in { background-color: var(--cc-mint); color: var(--cc-forest); }
+.cc-badge-completed { background-color: #DDF3E6; color: #145C38; }
+.cc-badge-cancelled { background-color: var(--cc-terracotta-soft); color: #9E3614; }
+
+.cc-cta-cream {
+  background-color: var(--cc-cream);
+  border: 1px solid #EFE4C8;
+  border-radius: var(--cc-radius-lg);
+  padding: 1.75rem 2rem;
+}
+
+.cc-footer {
+  margin-top: auto;
+  background-color: var(--cc-forest);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 1.5rem 0;
+  font-size: 0.86rem;
+}
+
+/* Split Login Screen */
+.cc-auth-wrapper {
+  min-height: calc(100vh - 5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at top right, var(--cc-mint) 0%, var(--cc-bg) 45%, var(--cc-cream) 100%);
+}
+
+.cc-auth-card {
+  background: var(--cc-surface);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(15, 46, 40, 0.1);
+  overflow: hidden;
+  max-width: 920px;
+  width: 100%;
+  border: 1px solid var(--cc-border);
+}
+
+.cc-auth-side {
+  background: linear-gradient(155deg, var(--cc-forest) 0%, #184A40 100%);
+  color: #FFFFFF;
+  padding: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cc-auth-side h2 { color: #FFFFFF; }
